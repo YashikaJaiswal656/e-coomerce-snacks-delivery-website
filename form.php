@@ -28,14 +28,14 @@ if (isset($_POST["send"])) {
     $mail->isSMTP();                              // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';       // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                     // Enable SMTP authentication
-    $mail->Username   = 'yashikajaiswal30@gmail.com'; // SMTP write your email
-    $mail->Password   = 'aurmddwyknpnrzby';      // SMTP password
+    $mail->Username   = ''; // SMTP write your email
+    $mail->Password   = '';      // SMTP password
     $mail->SMTPSecure = 'ssl';                    // Enable implicit SSL encryption
     $mail->Port       = 465;                      // TCP port to connect to
 
     // Recipients
     $mail->setFrom($_POST["email"], $_POST["name"]); // Sender Email and name
-    $mail->addAddress('yashikajaiswal30@gmail.com');   // Add a recipient email  
+    $mail->addAddress('');   // Add a recipient email  
     $mail->addReplyTo($_POST["email"], $_POST["name"]); // Reply to sender email
 
     // Content
@@ -50,13 +50,13 @@ if (isset($_POST["send"])) {
         $confirmationMail->isSMTP();
         $confirmationMail->Host = 'smtp.gmail.com';
         $confirmationMail->SMTPAuth = true;
-        $confirmationMail->Username = 'yashikajaiswal30@gmail.com'; // SMTP email
-        $confirmationMail->Password = 'aurmddwyknpnrzby';           // SMTP password
+        $confirmationMail->Username = ''; // SMTP email
+        $confirmationMail->Password = '';           // SMTP password
         $confirmationMail->SMTPSecure = 'ssl';
         $confirmationMail->Port = 465;
 
         // Recipients
-        $confirmationMail->setFrom('yashikajaiswal30@gmail.com', 'Yashika'); // Admin email
+        $confirmationMail->setFrom('', 'Yashika'); // Admin email
         $confirmationMail->addAddress($_POST["email"], $_POST["name"]);  // Send confirmation to the user
 
         // Confirmation email content
@@ -90,3 +90,4 @@ if (isset($_POST["send"])) {
 
 </body>
 </html>
+
