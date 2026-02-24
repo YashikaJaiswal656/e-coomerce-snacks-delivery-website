@@ -25,14 +25,14 @@ if (isset($_POST["send"])) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'yashikajaiswal30@gmail.com';
-        $mail->Password   = 'aurmddwyknpnrzby';
+        $mail->Username   = '';
+        $mail->Password   = '';
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
 
         // Recipients
         $mail->setFrom($_POST["email"], $_POST["name"]);
-        $mail->addAddress('yashikajaiswal30@gmail.com');
+        $mail->addAddress('');
         $mail->addReplyTo($_POST["email"], $_POST["name"]);
 
         // Content
@@ -53,13 +53,13 @@ if (isset($_POST["send"])) {
             $confirmationMail->isSMTP();
             $confirmationMail->Host = 'smtp.gmail.com';
             $confirmationMail->SMTPAuth = true;
-            $confirmationMail->Username = 'yashikajaiswal30@gmail.com';
-            $confirmationMail->Password = 'aurmddwyknpnrzby';
+            $confirmationMail->Username = '';
+            $confirmationMail->Password = '';
             $confirmationMail->SMTPSecure = 'ssl';
             $confirmationMail->Port = 465;
 
             // Recipients for confirmation email
-            $confirmationMail->setFrom('yashikajaiswal30@gmail.com', 'Yashika');
+            $confirmationMail->setFrom('', 'Yashika');
             $confirmationMail->addAddress($_POST["email"], $_POST["name"]);
 
             // Confirmation email content
@@ -101,3 +101,4 @@ if (isset($_POST["send"])) {
 
 </body>
 </html>
+
